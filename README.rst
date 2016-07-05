@@ -44,6 +44,12 @@ Now, let's do the same, only this time we'll use the ``klass()`` class decorator
 We even left out the attribute list, and ``pretty.info()`` (which is what ``pretty.klass()`` uses behind the scenes) builds it for us. That's it! You get nice ``__repr__()`` and ``__str__()`` methods for free.
 
 
+Python compatibility
+--------------------
+
+Compatible with Python 2.7+ and 3.5+ (thanks to the ``future`` library). The code may or may not work under earlier versions of Python 3 (perhaps back to 3.3).
+
+
 Installation
 ============
 
