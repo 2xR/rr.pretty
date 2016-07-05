@@ -2,11 +2,15 @@
 Utility functions to help in the creation of nicer repr() and str() representations for objects.
 """
 from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
+
 from functools import partial
 import pkgutil
 
 
-__version__ = pkgutil.get_data(__name__, "VERSION").strip()
+__version__ = pkgutil.get_data(__name__, "VERSION").decode("utf-8").strip()
 DEFAULT_FMT = "{!s}={!r}"
 DEFAULT_SEP = ", "
 
@@ -45,7 +49,7 @@ def info(attrs=None, default_fmt=DEFAULT_FMT, default_sep=DEFAULT_SEP):
     """
     def __info__(obj, fmt=default_fmt, sep=default_sep):
         if attrs is None:
-            final_attrs = sorted(obj.__dict__.iterkeys())
+            final_attrs = sorted(obj.__dict__.keys())
         else:
             final_attrs = attrs
         return sep.join(fmt.format(attr, getattr(obj, attr)) for attr in final_attrs)
@@ -84,8 +88,8 @@ def _example():
             self.__dict__.update(kwargs)
 
     f = foo(x=234, y=40)
-    print "created object f = foo(x=234, y=40)"
-    print "f.__info__() -->", f.__info__()
-    print "str(f) -->", str(f)
-    print "repr(f) -->", repr(f)
+    print("created object f = foo(x=234, y=40)")
+    print("f.__info__() -->", f.__info__())
+    print("str(f) -->", str(f))
+    print("repr(f) -->", repr(f))
     return f
