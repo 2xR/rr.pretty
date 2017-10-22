@@ -41,13 +41,13 @@ Now, let's do the same, only this time we'll use the ``klass()`` class decorator
             self.y = y
             self.z = z
 
-    f = foo(1, 2, 3)
+    f = Foo(1, 2, 3)
     print(repr(f))
     print(str(f))
 
 We even left out the attribute list, and ``pretty.info()`` (which is what ``pretty.klass()`` uses behind the scenes) builds it for us. That's it! You get nice ``__repr__()`` and ``__str__()`` methods for free.
 
-Finally, a similar result can be also obtained using ``PrettyMixin`` as a base class instead of the class decorator.
+Finally, a similar result can be also obtained using ``PrettyMixin`` as a base class instead of the class decorator, but that's not listed here because it practically identical to the previous example.
 
 
 Compatibility
