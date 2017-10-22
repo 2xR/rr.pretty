@@ -10,19 +10,21 @@ Let's look at an example:
 
     from rr import pretty
 
-    class foo(object):
+
+    class Foo:
+
         __str__ = pretty.str
         __repr__ = pretty.repr
-        __info__ = pretty.info(["x", "y", "z"])
+        __info__ = pretty.info("x y z")
 
         def __init__(self, x, y, z):
             self.x = x
             self.y = y
             self.z = z
 
-    f = foo(1, 2, 3)
-    print repr(f)  # see for yourself :)
-    print str(f)
+    f = Foo(1, 2, 3)
+    print(repr(f))  # see for yourself :)
+    print(str(f))
 
 Now, let's do the same, only this time we'll use the ``klass()`` class decorator:
 
@@ -30,46 +32,43 @@ Now, let's do the same, only this time we'll use the ``klass()`` class decorator
 
     from rr import pretty
 
+
     @pretty.klass
-    class foo(object):
+    class Foo:
+
         def __init__(self, x, y, z):
             self.x = x
             self.y = y
             self.z = z
 
     f = foo(1, 2, 3)
-    print repr(f)  # see for yourself :)
-    print str(f)
+    print(repr(f))
+    print(str(f))
 
 We even left out the attribute list, and ``pretty.info()`` (which is what ``pretty.klass()`` uses behind the scenes) builds it for us. That's it! You get nice ``__repr__()`` and ``__str__()`` methods for free.
 
+Finally, a similar result can be also obtained using ``PrettyMixin`` as a base class instead of the class decorator.
 
-Python compatibility
---------------------
 
-Compatible with Python 2.7+ and 3.5+ (thanks to the ``future`` library). The code may or may not work under earlier versions of Python 3 (perhaps back to 3.3).
+Compatibility
+=============
+
+Developed and tested in Python 3.6+. The code may or may not work under earlier versions of Python 3 (perhaps back to 3.3).
 
 
 Installation
 ============
 
-From PyPI ("stable" release):
+From the github repo:
 
 .. code-block:: bash
 
-    pip install rr.pretty
-
-From the Git repo:
-
-.. code-block:: bash
-
-    git clone https://github.com/2xR/rr.pretty.git
-    pip install ./rr.pretty
+    pip install git+https://github.com/2xR/rr.pretty.git
 
 
-Contributing
-============
+License
+=======
 
-Contributions are welcome through github pull requests (tests would be nice to have... :P)
+This library is released as open source under the MIT License.
 
-And if you're using the library and would like to say *"thanks!"* and/or keep me working on it, why not `buy me a beer <https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=2UMJC8HSU8RFJ&lc=PT&item_name=DoubleR&item_number=github%2f2xR%2fpaypal&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted>`_?
+Copyright (c) 2016-2017 Rui Rei
