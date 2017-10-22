@@ -2,7 +2,7 @@
 rr.pretty
 =========
 
-This module exposes a few functions and a class decorator to make the task of writing ``__repr__()`` and ``__str__()`` for custom classes much easier. It will display a list of nicely formatted ``(attr, val)`` pairs with custmizable separator and formatting for each pair.
+This module exposes a few functions and a class decorator to make the task of writing ``__repr__()`` and ``__str__()`` for custom classes much easier. It will display a list of nicely formatted ``(attr, val)`` pairs with customizable separator and formatting for each pair.
 
 Let's look at an example:
 
