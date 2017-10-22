@@ -47,7 +47,7 @@ Now, let's do the same, only this time we'll use the ``klass()`` class decorator
 
 We even left out the attribute list, and ``pretty.info()`` (which is what ``pretty.klass()`` uses behind the scenes) builds it for us. That's it! You get nice ``__repr__()`` and ``__str__()`` methods for free.
 
-Finally, a similar result can be also obtained using ``PrettyMixin`` as a base class instead of the class decorator, but that's not listed here because it practically identical to the previous example.
+Finally, a similar result can be also obtained using ``PrettyMixin`` as a base class instead of the class decorator, but that's not listed here because it is practically identical to the previous example.
 
 
 Compatibility
